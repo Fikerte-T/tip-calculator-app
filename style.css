@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+  .input-wrapper {
+    position: relative;  
+    /* width: 100%;         
+    display: flex;      
+    align-items: center;  */
+  }
+  
+  .input-wrapper img {
+    position: absolute;
+    top: 45px;
+    left: 20px;
+  }
+
+  .input-wrapper input {
+    display: block;
+    /* width: 96%; */
+    padding: 5px 5px 5px 35px;                      
+    box-sizing: border-box;     
+    font-size: 16px;           
+    /* border: 1px solid #ccc;     */
+    border-radius: 4px;   
+    font-size: 1.5rem;    
+    font-weight: 600; 
+  }
+  
+  .input-wrapper .icon {
+    position: absolute;         
+    left: 10px;                 
+    top: 50%;                  
+    transform: translateY(-50%);
+    width: 20px;               
+    height: 20px;              
+    background-image: url('/images/icon-person.svg');  
+    background-size: contain;  
+    background-repeat: no-repeat; 
+  }
+  
+  .checkbox-button, .custom-checkbox {
+    /* position: relative; */
+    /* display: inline-block; */
+    cursor: pointer;
+    background-color: theme('colors.custom-verydarkcyan');
+    color: white;
+    /* padding: 10px 20px; */
+    border-radius: 5px;
+    text-align: center;
+    user-select: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-right: 1rem;
+    margin-top: 0.5rem ;
+    margin-bottom: 0.5rem;
+    width: 7.5rem;
+    height: 2.75rem;
+    display: flex;
+  }
+  
+  .custom-checkbox {
+    padding: 10px;
+    /* text-align: center; */
+    color: theme('colors.custom-verydarkcyan');
+    background-color: theme('colors.custom-verylightgrayishcyan');
+  }
+
+  .checkbox-button input,
+  .custom-checkbox input {
+    display: none;
+  }
+
+  .checkbox-button span {
+    padding: 0 20px;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .checkbox-button:hover,
+  .btn:hover {
+    background-color: theme('colors.custom-lightgrayishcyan');
+    color: theme('colors.custom-verydarkcyan');
+    transform: translateY(-2px);
+  }
+
+  /* Hide arrows in WebKit browsers (Chrome, Safari, Edge) */
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Hide arrows in Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  /* Optional: Focus styling */
+  input[type="number"]:focus {
+    outline: none;  /* Remove default outline */
+  }
+  .custom-checkbox:hover,
+  .input-wrapper input:hover,
+  .input-wrapper input:focus,
+  .custom-checkbox:focus  {
+    color: theme('colors.custom-verydarkcyan');
+    border: 2px solid theme('colors.custom-strongcyan');
+    transform: translateY(-2px);
+  }
+  
+  /* .custom-checkbox:focus {
+    background-color: theme('colors.custom-strongcyan');
+    color: theme('colors.custom-verydarkcyan');
+    transform: translateY(0);
+  } */
+  
+  .checkbox-button input:checked + span {
+    background-color: theme('colors.custom-strongcyan');
+    color: theme('colors.custom-verydarkcyan');
+    border-radius: 5px;
+  }
+}
