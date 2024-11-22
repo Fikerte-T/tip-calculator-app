@@ -556,9 +556,6 @@ video {
 
 .input-wrapper {
   position: relative;
-  /* width: 100%;         
-    display: flex;      
-    align-items: center;  */
 }
 
 .input-wrapper img {
@@ -569,11 +566,9 @@ video {
 
 .input-wrapper input {
   display: block;
-  /* width: 96%; */
   padding: 5px 5px 5px 35px;
   box-sizing: border-box;
   font-size: 16px;
-  /* border: 1px solid #ccc;     */
   border-radius: 4px;
   font-size: 1.5rem;
   font-weight: 600;
@@ -592,12 +587,9 @@ video {
 }
 
 .checkbox-button, .custom-checkbox {
-  /* position: relative; */
-  /* display: inline-block; */
   cursor: pointer;
   background-color: hsl(183, 100%, 15%);
   color: white;
-  /* padding: 10px 20px; */
   border-radius: 5px;
   text-align: center;
   -webkit-user-select: none;
@@ -607,19 +599,25 @@ video {
   transition: background-color 0.3s, transform 0.2s;
   font-size: 1.5rem;
   font-weight: 600;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
   margin-top: 0.5rem ;
   margin-bottom: 0.5rem;
-  width: 7.5rem;
   height: 2.75rem;
   display: flex;
 }
 
 .custom-checkbox {
   padding: 10px;
-  /* text-align: center; */
   color: hsl(183, 100%, 15%);
   background-color: hsl(189, 41%, 97%);
+}
+
+.custom-checkbox::-moz-placeholder {
+  text-align: center;
+}
+
+.custom-checkbox::placeholder {
+  text-align: center;
 }
 
 .checkbox-button input,
@@ -658,7 +656,6 @@ input[type="number"] {
 
 input[type="number"]:focus {
   outline: none;
-  /* Remove default outline */
 }
 
 .custom-checkbox:hover,
@@ -670,16 +667,15 @@ input[type="number"]:focus {
   transform: translateY(-2px);
 }
 
-/* .custom-checkbox:focus {
-    background-color: theme('colors.custom-strongcyan');
-    color: theme('colors.custom-verydarkcyan');
-    transform: translateY(0);
-  } */
-
 .checkbox-button input:checked + span {
   background-color: hsl(172, 67%, 45%);
   color: hsl(183, 100%, 15%);
   border-radius: 5px;
+}
+
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .my-5 {
@@ -708,36 +704,36 @@ input[type="number"]:focus {
   display: flex;
 }
 
+.grid {
+  display: grid;
+}
+
 .min-h-screen {
   min-height: 100vh;
-}
-
-.w-1\/2 {
-  width: 50%;
-}
-
-.w-\[59rem\] {
-  width: 59rem;
 }
 
 .w-full {
   width: 100%;
 }
 
+.max-w-md {
+  max-width: 28rem;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .flex-col {
   flex-direction: column;
 }
 
-.flex-wrap {
-  flex-wrap: wrap;
+.place-items-stretch {
+  place-items: stretch;
 }
 
 .items-center {
   align-items: center;
-}
-
-.justify-center {
-  justify-content: center;
 }
 
 .justify-between {
@@ -748,10 +744,9 @@ input[type="number"]:focus {
   justify-content: space-evenly;
 }
 
-.space-x-5 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1.25rem * var(--tw-space-x-reverse));
-  margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
+.gap-x-2 {
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
 }
 
 .rounded-lg {
@@ -803,11 +798,6 @@ input[type="number"]:focus {
   font-family: Space Mono, monospace;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
@@ -818,33 +808,8 @@ input[type="number"]:focus {
   line-height: 1.75rem;
 }
 
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
 .font-bold {
   font-weight: 700;
-}
-
-.leading-loose {
-  line-height: 2;
-}
-
-.tracking-wider {
-  letter-spacing: 0.05em;
-}
-
-.tracking-widest {
-  letter-spacing: 0.1em;
-}
-
-.tracking-\[\] {
-  letter-spacing: ;
-}
-
-.tracking-\[1rem\] {
-  letter-spacing: 1rem;
 }
 
 .tracking-\[0\.5rem\] {
@@ -877,6 +842,10 @@ input[type="number"]:focus {
 }
 
 @media (min-width: 1024px) {
+  .lg\:m-0 {
+    margin: 0px;
+  }
+
   .lg\:mx-4 {
     margin-left: 1rem;
     margin-right: 1rem;
@@ -886,11 +855,23 @@ input[type="number"]:focus {
     margin-left: 1rem;
   }
 
-  .lg\:w-\[95\%\] {
-    width: 95%;
+  .lg\:w-1\/2 {
+    width: 50%;
   }
 
-  .lg\:w-\[96\%\] {
-    width: 96%;
+  .lg\:w-\[59rem\] {
+    width: 59rem;
+  }
+
+  .lg\:max-w-none {
+    max-width: none;
+  }
+
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:flex-row {
+    flex-direction: row;
   }
 }

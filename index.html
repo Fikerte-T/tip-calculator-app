@@ -15,18 +15,17 @@
 <body>
 
  <main class="font-custom min-h-screen bg-custom-lightgrayishcyan flex flex-col justify-evenly items-center">
-  <h2 class="text-xl tracking-[0.5rem] text-custom-darkgrayishcyan font-bold">SPLI<span class="block">TTER</span></h2>
-  <div class="bg-white w-[59rem] p-8 rounded-xl">
-    <form action="" class="flex">
-      <div class="w-1/2 lg:mx-4 my-5">
-        <div class="input-wrapper lg:w-[95%]">
-          <!-- <div class="icon"></div> -->
+  <h2 class="text-xl tracking-[0.5rem] text-custom-darkgrayishcyan font-bold my-10 lg:m-0">SPLI<span class="block">TTER</span></h2>
+  <div class="bg-white max-w-md lg:max-w-none lg:w-[59rem] p-8 rounded-xl">
+    <form action="" class="flex flex-col lg:flex-row">
+      <div class="lg:w-1/2 lg:mx-4 my-5">
+        <div class="input-wrapper w-full">
            <img src="images/icon-dollar.svg" alt="">
           <label class="text-custom-darkgrayishcyan font-bold" for="bill">Bill</label>
           <input class="text-right w-full bg-custom-verylightgrayishcyan mt-2" id="bill" type="number" name="number" placeholder="0" />
         </div>
 
-        <fieldset class="flex flex-wrap my-9">
+        <fieldset class="grid grid-cols-2 lg:grid-cols-3 gap-x-2 place-items-stretch my-9">
           <legend class="text-custom-darkgrayishcyan font-bold">Select Tip %</legend>
           <label class="checkbox-button" for="5p">
             <input id="5p" type="radio" name="percent" value="5" />
@@ -48,18 +47,15 @@
             <input id="50p" type="radio" name="percent" value="50"/>
             <span>50%</span>
           </label>
-          <!-- <label class="custom-checkbox" for="custom"> -->
-            <input class="custom-checkbox text-right text-custom-darkgrayishcyan" id="custom" type="number" name="custom-percent" placeholder="Custom"/>
-            <!-- <span>Custom</span> -->
-          <!-- </label> -->
+          <input class="custom-checkbox text-right text-custom-darkgrayishcyan" id="custom" type="number" name="custom-percent" placeholder="Custom"/>
         </fieldset>
-        <div class="input-wrapper lg:w-[96%]">
+        <div class="input-wrapper">
           <img src="images/icon-person.svg" alt="">
           <label class="text-custom-darkgrayishcyan font-bold"  for="people">Number of People</label>
           <input class="block text-right w-full bg-custom-verylightgrayishcyan mt-2" id="people" type="number" name="number" placeholder="0" />
         </div>
       </div>
-      <div class="font-bold bg-custom-verydarkcyan w-1/2 rounded-xl flex flex-col justify-between jus p-8 lg:ml-4">
+      <div class="font-bold bg-custom-verydarkcyan lg:w-1/2 rounded-xl flex flex-col justify-between jus p-8 lg:ml-4">
         <p class="flex justify-between my-5"> 
           <span class="text-white bl">Tip Amount <span class="block text-custom-grayishcyan">/ person</span></span>
           <span class="text-custom-strongcyan text-4xl">$0.00</span>
