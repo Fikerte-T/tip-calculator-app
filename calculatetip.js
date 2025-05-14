@@ -1,5 +1,3 @@
-const btn = document.getElementById('btn')
-const inputWrapper = document.querySelectorAll('input-wrapper')
 const errormsg = document.querySelectorAll('.error-msg')
 const customInput = document.getElementById('custom-input')
 const radioButtons = document.querySelectorAll('input[type="radio"]')
@@ -11,13 +9,7 @@ const curtomInputError = document.getElementById('custominput-error')
 const tipAmount = document.getElementById('tip-amt')
 const totalAmt = document.getElementById('total')
 const form = document.getElementById('form');
-// const 
 
-// console.log(errormsg)
-
-
-
-// console.log(formData.bill)
   const validations = {
     'bill': (value) => (value > 0),
     'person': (value) => (value > 0),
@@ -28,13 +20,7 @@ const form = document.getElementById('form');
   const uncheckRadio = () => {
     radioButtons.forEach((radio) => radio.checked = false)
   }
-  // radioButtons.forEach((radio) => {
-  //   radio.addEventListener('click', () => {
-  //     if(radio.checked = true){
-  //       customInput.value = ''
-  //     }
-  //   })
-  // })
+
   const getCurrentPercent = () => {
     const checkedRadio = document.querySelector('input[type="radio"]:checked')
     if(checkedRadio) {
@@ -46,20 +32,16 @@ const form = document.getElementById('form');
   
   const validateBillValue = () => {
     let billValue = bill.value
-    // console.log('bill ' + billValue)
     if(billValue > 0) {
-      // console.log(billValue)
       billError.classList.add('hidden')
       billError.classList.remove('block')
       return billValue
     } else if(billValue == 0) {
-      // console.log('error' + billValue)
       billError.classList.remove('hidden')
       billError.classList.add('block')
       billError.innerHTML = `Can't be Zero`
       return false
     } else if(billValue < 0) {
-      // console.log('error' + billValue)
       billError.classList.remove('hidden')
       billError.classList.add('block')
       billError.innerHTML = `Can't be negative`
@@ -70,14 +52,11 @@ const form = document.getElementById('form');
     
   const validatePeopleValue = () => {
     let peopleValue = people.value
-    // console.log('people ' + peopleValue)
     if(peopleValue > 0) {
-      // console.log(peopleValue)
       peopleError.classList.add('hidden')
       peopleError.classList.remove('block')
       return peopleValue
     } else if(peopleValue == 0) {
-      // console.log('error' + peopleValue)
       peopleError.classList.remove('hidden')
       peopleError.classList.add('block')
       peopleError.innerHTML = `Can't be Zero`
@@ -93,20 +72,16 @@ const form = document.getElementById('form');
 
   const validateCustomValue = () => {
     let customValue = customInput.value
-    // console.log('custom value ' + customValue)
     if(customValue > 0) {
-      // console.log(customValue)
       curtomInputError.classList.add('hidden')
       curtomInputError.classList.remove('block')
       return customValue
     } else if(!getCurrentPercent() && customValue == 0) {
-      // console.log('error' + customValue)
       curtomInputError.classList.remove('hidden')
       curtomInputError.classList.add('block')
       curtomInputError.innerHTML = `Can't be Zero`
       return false
     } else if(!getCurrentPercent() && customValue < 0) {
-      // console.log('error' + customValue)
       curtomInputError.classList.remove('hidden')
       curtomInputError.classList.add('block')
       curtomInputError.innerHTML = `Can't be negative`
@@ -114,7 +89,8 @@ const form = document.getElementById('form');
     }
   }
   
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault()
     form.reset()
   }
   
