@@ -106,8 +106,7 @@
     border-radius: 5px;
   }
 
-  .error-msg.block,
-  #error {
+  .error-msg.block {
     color: #ea580c;
     float: right;
     font-weight: bold;

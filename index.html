@@ -22,14 +22,14 @@
         <div class="input-wrapper">
           <img class="relative z-50" src="images/icon-dollar.svg" alt="">
           <label class="text-custom-darkgrayishcyan font-bold" for="bill">Bill</label>
-          <span id="error hidden" class="error-msg hidden">Can't be zero</span>
+          <span id="bill-error" class="error-msg hidden"></span>
           <input class=" text-right w-full bg-custom-verylightgrayishcyan mt-2" id="bill" type="number" name="bill" placeholder="0" />
         </div>
 
         <fieldset class="grid grid-cols-2 lg:grid-cols-3 gap-x-2 place-items-stretch my-9">
           <div class="flex justify-between col-span-2 lg:col-span-3">
             <legend class=" text-custom-darkgrayishcyan font-bold">Select Tip %</legend>
-            <span id="error" class="hidden">Can't be zero</span>
+            <span id="custominput-error" class="error-msg hidden">Can't be zero</span>
           </div>
 
           <label class="checkbox-button" for="5p">
@@ -52,23 +52,23 @@
             <input id="50p" type="radio" name="percent" value="50"/>
             <span>50%</span>
           </label>
-          <input id="custom-input" class="custom-checkbox text-right text-custom-darkgrayishcyan" id="custom" type="number" name="custompercent" placeholder="Custom"/>
+          <input id="custom-input" class="custom-checkbox text-right text-custom-darkgrayishcyan" type="number" name="custompercent" placeholder="Custom"/>
         </fieldset>
         <div class="input-wrapper">
           <img class="relative z-50" src="images/icon-person.svg" alt="">
           <label class="text-custom-darkgrayishcyan font-bold"  for="people">Number of People</label>
-          <span class="error-msg hidden">Can't be zero</span>
+          <span id="people-error" class="error-msg hidden"></span>
           <input class="text-right w-full bg-custom-verylightgrayishcyan mt-2" id="people" type="number" name="person" placeholder="0" />
         </div>
       </div>
       <div class="font-bold bg-custom-verydarkcyan lg:w-1/2 rounded-xl flex flex-col justify-between jus p-8 lg:ml-4">
         <p class="flex justify-between my-5"> 
           <span class="text-white bl">Tip Amount <span class="block text-custom-grayishcyan">/ person</span></span>
-          <span class="text-custom-strongcyan text-4xl">$0.00</span>
+          <span id="tip-amt" class="text-custom-strongcyan text-4xl">$0.00</span>
         </p>
         <p class="flex justify-between my-5"> 
           <span class="text-white">Total <span class="block text-custom-grayishcyan">/ person</span></span>
-          <span class="text-custom-strongcyan text-4xl">$0.00</span>
+          <span id="total" class="text-custom-strongcyan text-4xl">$0.00</span>
         </p>
         <button id="btn" class="mt-auto py-3 text-custom-verydarkcyan bg-custom-strongcyan/20 rounded-lg text-xl w-full" type="submit">RESET</button>
       </div>
@@ -76,9 +76,9 @@
   </div>
  </main>
 <script src="calculatetip.js"></script>
-<script>
+<!-- <script>
   const form = document.getElementById('form');
   form.onsubmit = handleSubmit;
-</script>
+</script> -->
 </body>
 </html>
