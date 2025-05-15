@@ -666,7 +666,7 @@ input[type="number"]:focus {
   border-radius: 5px;
 }
 
-.error-msg.block {
+.error-msg {
   color: #ea580c;
   float: right;
   font-weight: bold;
