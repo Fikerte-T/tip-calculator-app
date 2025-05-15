@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+  .input-wrapper {
+    position: relative;  
+  }
+  
+  .input-wrapper img {
+    position: absolute;
+    top: 45px;
+    left: 20px;
+  }
+
+  .input-wrapper input {
+    display: block;
+    padding: 5px 15px;                      
+    box-sizing: border-box;     
+    font-size: 16px;           
+    border-radius: 4px;   
+    font-size: 1.5rem;    
+    font-weight: 600; 
+  }
+ 
+  .input-wrapper input:hover {
+    /* opacity: 0; */
+    background-color: none;
+  }
+  
+  .checkbox-button, .custom-checkbox {
+    cursor: pointer;
+    background-color: theme('colors.custom-verydarkcyan');
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    user-select: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem ;
+    margin-bottom: 0.5rem;
+    height: 2.75rem;
+    display: flex;
+  }
+  
+  .custom-checkbox {
+    padding: 10px;
+    color: theme('colors.custom-verydarkcyan');
+    background-color: theme('colors.custom-verylightgrayishcyan');
+  }
+
+  .custom-checkbox::placeholder {
+    text-align: center;
+  }
+
+  .checkbox-button input {
+    display: none;
+  }
+
+  .checkbox-button span {
+    padding: 0 20px;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .checkbox-button:hover,
+  #btn:hover {
+    background-color: theme('colors.custom-lightgrayishcyan');
+    color: theme('colors.custom-verydarkcyan');
+    transform: translateY(-2px);
+  }
+
+  /* Hide arrows in WebKit browsers (Chrome, Safari, Edge) */
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Hide arrows in Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  /* Optional: Focus styling */
+  input[type="number"]:focus {
+    outline: none; 
+  }
+  .custom-checkbox:hover,
+  .input-wrapper input:hover,
+  .input-wrapper input:focus,
+  .custom-checkbox:focus  {
+    color: theme('colors.custom-verydarkcyan');
+    border: 2px solid theme('colors.custom-strongcyan');
+    transform: translateY(-2px);
+  }
+    
+  .checkbox-button input:checked + span,
+  #btn:focus {
+    background-color: theme('colors.custom-strongcyan');
+    color: theme('colors.custom-verydarkcyan');
+    border-radius: 5px;
+  }
+
+  .error-msg {
+    color: #ea580c;
+    float: right;
+    font-weight: bold;
+  }
+}
