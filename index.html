@@ -7,38 +7,78 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Tip calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="dist/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  Bill
+ <main class="font-custom min-h-screen bg-custom-lightgrayishcyan flex flex-col justify-evenly items-center">
+  <h2 class="text-xl tracking-[0.5rem] text-custom-darkgrayishcyan font-bold my-10 lg:m-0">SPLI<span class="block">TTER</span></h2>
+  <div class="bg-white max-w-md lg:max-w-none lg:w-[59rem] p-8 rounded-xl">
+    <form action="" id="form" class="flex flex-col lg:flex-row">
+      <div class="lg:w-1/2 lg:mx-4 my-5">
+        <div class="input-wrapper">
+          <img class="relative z-50" src="images/icon-dollar.svg" alt="">
+          <label class="text-custom-darkgrayishcyan font-bold" for="bill">Bill</label>
+          <span id="bill-error" class="error-msg hidden"></span>
+          <input class=" text-right w-full bg-custom-verylightgrayishcyan mt-2" id="bill" type="number" name="bill" placeholder="0" />
+        </div>
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+        <fieldset class="grid grid-cols-2 lg:grid-cols-3 gap-x-2 place-items-stretch my-9">
+          <div class="flex justify-between col-span-2 lg:col-span-3">
+            <legend class=" text-custom-darkgrayishcyan font-bold">Select Tip %</legend>
+            <span id="custominput-error" class="error-msg hidden">Can't be zero</span>
+          </div>
 
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+          <label class="checkbox-button" for="5p">
+            <input id="5p" type="radio" name="percent" value="5" checked />
+            <span>5%</span>
+          </label>
+          <label class="checkbox-button" for="10p">
+            <input id="10p" type="radio" name="percent" value="10" />
+            <span>10%</span>
+          </label>
+          <label class="checkbox-button" for="15p">
+            <input id="15p" type="radio" name="percent" value="15" />
+            <span>15%</span>
+          </label>
+          <label class="checkbox-button" for="25p">
+            <input id="25p" type="radio" name="percent" value="25" />
+            <span>25%</span>
+          </label>
+          <label class="checkbox-button" for="50p">
+            <input id="50p" type="radio" name="percent" value="50"/>
+            <span>50%</span>
+          </label>
+          <input id="custom-input" class="custom-checkbox text-right text-custom-darkgrayishcyan" type="number" name="custompercent" placeholder="Custom"/>
+        </fieldset>
+        <div class="input-wrapper">
+          <img class="relative z-50" src="images/icon-person.svg" alt="">
+          <label class="text-custom-darkgrayishcyan font-bold"  for="people">Number of People</label>
+          <span id="people-error" class="error-msg hidden"></span>
+          <input class="text-right w-full bg-custom-verylightgrayishcyan mt-2" id="people" type="number" name="person" placeholder="0" />
+        </div>
+      </div>
+      <div class="font-bold bg-custom-verydarkcyan lg:w-1/2 rounded-xl flex flex-col justify-between jus p-8 lg:ml-4">
+        <p class="flex justify-between my-5"> 
+          <span class="text-white bl">Tip Amount <span class="block text-custom-grayishcyan">/ person</span></span>
+          <span id="tip-amt" class="text-custom-strongcyan text-4xl">$0.00</span>
+        </p>
+        <p class="flex justify-between my-5"> 
+          <span class="text-white">Total <span class="block text-custom-grayishcyan">/ person</span></span>
+          <span id="total" class="text-custom-strongcyan text-4xl">$0.00</span>
+        </p>
+        <button id="btn" class="mt-auto py-3 text-custom-verydarkcyan bg-custom-strongcyan/20 rounded-lg text-xl w-full" type="submit">RESET</button>
+      </div>
+    </form>
   </div>
+ </main>
+<script src="calculatetip.js"></script>
+<!-- <script>
+  const form = document.getElementById('form');
+  form.onsubmit = handleSubmit;
+</script> -->
 </body>
 </html>
